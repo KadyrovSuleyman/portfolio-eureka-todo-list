@@ -20,6 +20,11 @@ const List = () => {
 
     isEmpty: computed(() => list.value.length === 0),
 
+    load: (taskList: TaskI[]) => {
+      list.value = taskList;
+      id = 1 + Math.max(...taskList.map((task) => task.id));
+    },
+
     clean: () => {
       list.value = [];
       id = 0;

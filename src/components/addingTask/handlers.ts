@@ -3,7 +3,9 @@
 
 import { toAddTask, value } from './adapter';
 
-const addHandler = (input: string) => () => {
+const addHandler = (input: string) => (event: Event) => {
+  event.preventDefault();
+
   if (input === '') {
     return;
   }

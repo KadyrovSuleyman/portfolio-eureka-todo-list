@@ -3,6 +3,9 @@
 import AddingTask from './addingTask/addingTask.vue';
 import TaskList from './taskList/taskList.vue';
 import FilterList from './filterList/filterList.vue';
+import { taskListInit, isLoaded } from './adapter';
+
+taskListInit();
 
 </script>
 
@@ -12,11 +15,12 @@ import FilterList from './filterList/filterList.vue';
 - добавил всем элементам название классов
 
 <template>
-  <div :class="'app'">
+  <div :class="'app'" v-if="isLoaded">
     <AddingTask />
     <TaskList />
     <FilterList />
   </div>
+  <h1 v-else>Загрузка</h1>
 </template>
 
 <style lang="scss">

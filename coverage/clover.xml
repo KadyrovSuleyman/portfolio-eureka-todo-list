@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1649359772202" clover="3.2.0">
-  <project timestamp="1649359772202" name="All files">
-    <metrics statements="102" coveredstatements="95" conditionals="12" coveredconditionals="9" methods="39" coveredmethods="36" elements="153" coveredelements="140" complexity="0" loc="102" ncloc="102" packages="7" files="14" classes="14"/>
+<coverage generated="1649364725298" clover="3.2.0">
+  <project timestamp="1649364725298" name="All files">
+    <metrics statements="118" coveredstatements="100" conditionals="12" coveredconditionals="8" methods="47" coveredmethods="37" elements="177" coveredelements="145" complexity="0" loc="118" ncloc="118" packages="7" files="15" classes="15"/>
     <package name="components">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="16" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="1"/>
       <file name="app.vue" path="/home/kadyrov_suleyman/vue/eureka3/src/components/app.vue">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="9" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+      </file>
+      <file name="handlers.ts" path="/home/kadyrov_suleyman/vue/eureka3/src/components/handlers.ts">
+        <metrics statements="7" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
       </file>
     </package>
     <package name="components.addingTask">
-      <metrics statements="16" coveredstatements="16" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="3"/>
+      <metrics statements="17" coveredstatements="13" conditionals="1" coveredconditionals="0" methods="4" coveredmethods="3"/>
       <file name="adapter.ts" path="/home/kadyrov_suleyman/vue/eureka3/src/components/addingTask/adapter.ts">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -26,26 +42,27 @@
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
       </file>
       <file name="handlers.ts" path="/home/kadyrov_suleyman/vue/eureka3/src/components/addingTask/handlers.ts">
-        <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <metrics statements="8" coveredstatements="4" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="4" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
-        <line num="7" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
       </file>
     </package>
     <package name="components.filterItem">
       <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="filterItem.vue" path="/home/kadyrov_suleyman/vue/eureka3/src/components/filterItem/filterItem.vue">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="3" count="11" type="stmt"/>
+        <line num="3" count="8" type="stmt"/>
         <line num="7" count="3" type="stmt"/>
-        <line num="20" count="17" type="stmt"/>
+        <line num="20" count="14" type="stmt"/>
       </file>
     </package>
     <package name="components.filterList">
@@ -55,7 +72,7 @@
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
-        <line num="5" count="5" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
         <line num="7" count="12" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
@@ -67,18 +84,18 @@
         <line num="4" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
-        <line num="10" count="15" type="stmt"/>
+        <line num="10" count="12" type="stmt"/>
       </file>
       <file name="handlers.ts" path="/home/kadyrov_suleyman/vue/eureka3/src/components/filterList/handlers.ts">
         <metrics statements="8" coveredstatements="6" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="3" type="stmt"/>
-        <line num="6" count="16" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="8" count="2" type="cond" truecount="0" falsecount="1"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
+        <line num="8" count="13" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
       </file>
     </package>
     <package name="components.taskItem">
@@ -96,7 +113,7 @@
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
-        <line num="7" count="7" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
       </file>
       <file name="handlers.ts" path="/home/kadyrov_suleyman/vue/eureka3/src/components/taskList/handlers.ts">
@@ -116,7 +133,7 @@
       </file>
     </package>
     <package name="state">
-      <metrics statements="43" coveredstatements="39" conditionals="6" coveredconditionals="4" methods="20" coveredmethods="20"/>
+      <metrics statements="45" coveredstatements="39" conditionals="6" coveredconditionals="4" methods="22" coveredmethods="20"/>
       <file name="filter.ts" path="/home/kadyrov_suleyman/vue/eureka3/src/state/filter.ts">
         <metrics statements="18" coveredstatements="14" conditionals="4" coveredconditionals="2" methods="7" coveredmethods="7"/>
         <line num="3" count="3" type="cond" truecount="2" falsecount="0"/>
@@ -125,21 +142,21 @@
         <line num="6" count="3" type="stmt"/>
         <line num="8" count="3" type="stmt"/>
         <line num="10" count="3" type="stmt"/>
-        <line num="18" count="19" type="stmt"/>
+        <line num="18" count="18" type="stmt"/>
         <line num="19" count="12" type="stmt"/>
         <line num="20" count="7" type="stmt"/>
         <line num="22" count="3" type="stmt"/>
         <line num="28" count="3" type="stmt"/>
-        <line num="29" count="24" type="stmt"/>
-        <line num="30" count="24" type="cond" truecount="0" falsecount="1"/>
+        <line num="29" count="23" type="stmt"/>
+        <line num="30" count="23" type="cond" truecount="0" falsecount="1"/>
         <line num="31" count="0" type="stmt"/>
         <line num="32" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="33" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
-        <line num="37" count="24" type="stmt"/>
+        <line num="37" count="23" type="stmt"/>
       </file>
       <file name="list.ts" path="/home/kadyrov_suleyman/vue/eureka3/src/state/list.ts">
-        <metrics statements="25" coveredstatements="25" conditionals="2" coveredconditionals="2" methods="13" coveredmethods="13"/>
+        <metrics statements="27" coveredstatements="25" conditionals="2" coveredconditionals="2" methods="15" coveredmethods="13"/>
         <line num="2" count="3" type="stmt"/>
         <line num="4" count="3" type="stmt"/>
         <line num="9" count="3" type="stmt"/>
@@ -149,22 +166,24 @@
         <line num="14" count="7" type="stmt"/>
         <line num="15" count="13" type="stmt"/>
         <line num="18" count="3" type="stmt"/>
-        <line num="19" count="18" type="stmt"/>
+        <line num="19" count="17" type="stmt"/>
         <line num="21" count="5" type="stmt"/>
-        <line num="24" count="4" type="stmt"/>
-        <line num="25" count="4" type="stmt"/>
-        <line num="29" count="14" type="stmt"/>
-        <line num="37" count="6" type="stmt"/>
-        <line num="41" count="2" type="stmt"/>
-        <line num="42" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="43" count="1" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="49" count="5" type="stmt"/>
-        <line num="50" count="5" type="cond" truecount="1" falsecount="0"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="53" count="4" type="stmt"/>
-        <line num="57" count="3" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="30" count="4" type="stmt"/>
+        <line num="34" count="14" type="stmt"/>
+        <line num="42" count="6" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="47" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="54" count="5" type="stmt"/>
+        <line num="55" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="58" count="4" type="stmt"/>
         <line num="62" count="3" type="stmt"/>
+        <line num="67" count="3" type="stmt"/>
       </file>
     </package>
   </project>

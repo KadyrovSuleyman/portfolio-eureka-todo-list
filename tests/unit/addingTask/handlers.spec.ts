@@ -8,10 +8,10 @@ jest.mock('@/components/addingTask/adapter', () => ({
 }));
 
 it('addHandler', () => {
-  addHandler('')();
+  addHandler('')(new Event('submit'));
   expect(toAddTask).toBeCalledTimes(0);
 
-  addHandler('value')();
+  addHandler('value')(new Event('submit'));
   expect(toAddTask).toBeCalledTimes(1);
   expect(toAddTask).toBeCalledWith('value');
   expect(value.value).toBe('');

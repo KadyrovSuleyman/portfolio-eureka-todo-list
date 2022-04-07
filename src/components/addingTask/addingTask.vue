@@ -18,11 +18,18 @@ const clickHandler = computed(() => addHandler(value.value));
 
 <template>
 
-  <div :class="'app-addingTask'">
+  <!-- <div :class="'app-addingTask'">
     <input v-model="value" :class="'addingTask-input'" />
     <button @click="clickHandler" :class="'addingTask-button'">
       Добавить задачу
     </button>
-  </div>
+  </div> -->
+
+  <form :class="'app-addingTask'" @submit="clickHandler">
+    <input v-model="value" :class="'addingTask-input'" />
+    <button @click="clickHandler" :class="'addingTask-button'">
+      Добавить задачу
+    </button>
+  </form>
 
 </template>
