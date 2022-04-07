@@ -76,7 +76,8 @@ describe('addingTask.vue', () => {
     await button.trigger('click');
     expect(toWriteInput).toBeCalledTimes(1);
 
-    expect(toWriteInput).toBeCalledWith(list.value, 'first');
+    // expect(toWriteInput).toBeCalledWith(list.value, 'first');
+    expect(toWriteInput).toBeCalledWith(list, 'first');
     expect(input.element.value).toBe('');
   });
 });

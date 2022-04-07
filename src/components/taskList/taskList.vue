@@ -1,29 +1,18 @@
 <script setup lang="ts">
 
-// <div v-if="innerData.activeFilter == 'active'">
-//   <div v-for="todo in innerData.zadachi" v-if="todo.completed != true">
-//     {{ todo.name }}
-//     <div v-on:click="remove(todo)"></div>
-//   </div>
-// </div>
-
-// <div v-if="innerData.activeFilter == 'Все'">
-// 1212
-//   <div v-for="todo in innerData.zadachi">
-//     {{ todo.name }}
-//     <div v-on:click="remove(todo)"></div>
-//   </div>
-// </div>
-
-// <div v-if="innerData.activeFilter == 'completed'">
-//   <div v-for="todo in innerData.zadachi" v-if="todo.completed == true">
-//     {{ todo.name }}
-//     <div v-on:click="remove(todo)"></div>
-//   </div>
-// </div>
+import list from '@/state/list';
+import TaskItem from '../taskItem/taskItem.vue';
 
 </script>
 
+- изначально каждый из вариантов отрисовывал один и тот же список, но с разными
+  параметрами. Состояние списка задач полностью определяется полным списком и
+  примененными фильтрами - достаточно будет описать шаблон один раз
+
 <template>
-  Список
+  <div :class="'app-taskList'">
+    <TaskItem v-for="task in list.get.value()" :key="task.id"
+      :name="task.text" :selected="task.active"
+    />
+  </div>
 </template>
