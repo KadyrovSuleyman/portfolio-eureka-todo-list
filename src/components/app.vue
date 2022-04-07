@@ -2,7 +2,7 @@
 
 import AddingTask from './addingTask/addingTask.vue';
 import TaskList from './taskList/taskList.vue';
-import TaskFilter from './taskFilter/taskFilter.vue';
+import FilterList from './filterList/filterList.vue';
 
 </script>
 
@@ -12,9 +12,11 @@ import TaskFilter from './taskFilter/taskFilter.vue';
 - добавил всем элементам название классов
 
 <template>
-  <AddingTask />
-  <TaskList />
-  <TaskFilter />
+  <div :class="'app'">
+    <AddingTask />
+    <TaskList />
+    <FilterList />
+  </div>
 </template>
 
 <style lang="scss">

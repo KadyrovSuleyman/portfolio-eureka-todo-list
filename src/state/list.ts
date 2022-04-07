@@ -1,15 +1,10 @@
 /* eslint-disable no-plusplus */
 import { computed, ref } from 'vue';
 import { TaskI } from './types';
+import { toFilter, FILTER } from './filter';
 
 // -  вынес отдельно список, т.к. он полностью определяет состояние всего приложения
 //    изменение списка возможно только с помощью методов списка
-
-export enum FILTER {
-  ALL,
-  ACTIVE,
-  COMPLETED
-}
 
 const List = () => {
   const list = ref<TaskI[]>([]);
@@ -20,25 +15,10 @@ const List = () => {
     (targetTask) => targetTask.id === targetId,
   );
 
-  type FindFuncT = () => TaskI[];
-  const findAll = () => [...list.value];
-  const findActive = () => list.value.filter((task) => task.active === true);
-  const findCompleted = () => list.value.filter((task) => task.active === false);
-
-  const filterMap = new Map<FILTER, FindFuncT>([
-    [FILTER.ALL, findAll],
-    [FILTER.ACTIVE, findActive],
-    [FILTER.COMPLETED, findCompleted],
-  ]);
-
   return {
-    get: computed(() => () => {
-      const func = filterMap.get(filter.value);
-      if (!func) {
-        return findAll();
-      }
-      return func();
-    }),
+    get: computed(() => () => toFilter(list.value, filter.value)),
+
+    isEmpty: computed(() => list.value.length === 0),
 
     clean: () => {
       list.value = [];
@@ -51,8 +31,6 @@ const List = () => {
         text,
         active: true,
       });
-
-      console.log(list.value);
     },
 
     delete: (targetId: number) => {

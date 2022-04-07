@@ -1,8 +1,90 @@
 /* eslint-disable no-plusplus */
 import TaskList from '@/components/taskList/taskList.vue';
 import { mount, VueWrapper } from '@vue/test-utils';
-import list, { FILTER } from '@/state/list';
+import list from '@/state/list';
+import { FILTER } from '@/state/filter';
 
+// ======================================
+jest.mock('@/state/filter', () => {
+  const originalModule = jest.requireActual('@/state/filter');
+  enum MOCKED_FILTER {
+    ALL,
+    ACTIVE,
+    COMPLETED,
+  }
+
+  return {
+    __esModule: true,
+    ...originalModule,
+    FILTER: MOCKED_FILTER,
+  };
+});
+
+jest.mock('@/state/list', () => {
+  const mockedFilter = jest.requireMock('@/state/filter');
+  const { ref, computed } = jest.requireActual('vue');
+
+  const List = () => {
+    const mockedList = ref([]);
+    let id = 0;
+
+    const filter = ref(mockedFilter.FILTER.ALL);
+
+    const findTask = (targetId: number) => mockedList.value.find(
+      (targetTask: any) => targetTask.id === targetId,
+    );
+
+    return {
+      get: computed(() => () => mockedFilter.toFilter(mockedList.value, filter.value)),
+
+      isEmpty: computed(() => mockedList.value.length === 0),
+
+      clean: () => {
+        mockedList.value = [];
+        id = 0;
+      },
+
+      add: (text: string) => {
+        mockedList.value.push({
+          id: ++id,
+          text,
+          active: true,
+        });
+      },
+
+      delete: (targetId: number) => {
+        mockedList.value = mockedList.value.filter((task: any) => task.id !== targetId);
+      },
+
+      toActive: (targetId: number) => {
+        const task = findTask(targetId);
+        if (!task) {
+          return;
+        }
+        task.active = true;
+      },
+
+      toComplete: (targetId: number) => {
+        const task = findTask(targetId);
+        if (!task) {
+          return;
+        }
+        task.active = false;
+      },
+
+      setFilter: (newFilter: FILTER) => {
+        filter.value = newFilter;
+      },
+    };
+  };
+
+  return {
+    __esModule: true,
+    default: List(),
+  };
+});
+
+// ======================================
 describe('taskList.vue', () => {
   let wrapper: VueWrapper<any>;
   afterEach(() => {

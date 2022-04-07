@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-// -  добавил проп, который отслеживает, является ли данная задача активной
+// -  добавил проп, который отслеживает, выбран ли данный фильтр
 //    эта информация отражается в названии класса, что позволяет легко
 //    использовать селекторы для стилей
 
@@ -8,17 +8,17 @@ import { computed, defineProps } from 'vue';
 
 type HandlerT = (payload: MouseEvent) => void;
 const props = defineProps({
-  active: Boolean,
+  selected: Boolean,
   name: String,
 
-  handleDelete: {
+  onClick: {
     type: Function,
     default: (): HandlerT => () => ({}),
   },
 });
 
-const taskItemClass = computed(() => 'taskList-taskItem'
-  + `${props.active ? ' taskList-taskItem__active' : ''}`);
+const filterItemClass = computed(() => 'filterList-filterItem'
+  + `${props.selected ? ' filterList-filterItem__selected' : ''}`);
 
 </script>
 
@@ -27,11 +27,10 @@ const taskItemClass = computed(() => 'taskList-taskItem'
 
 <template>
 
-  <div :class="taskItemClass">
-    <span :class="'taskItem-name'">
+  <div :class="filterItemClass">
+    <button :class="'filterItem-button'" @click="props.onClick">
       {{ props.name }}
-    </span>
-    <button :class="'taskItem-delete'" @click="props.handleDelete">delete</button>
+    </button>
   </div>
 
 </template>

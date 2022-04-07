@@ -34,7 +34,7 @@ describe('taskItem.vue', () => {
       active: true,
     });
     expect(wrapper.props().active).toBeTruthy();
-    expect(item.classes()).toEqual(['taskList-taskItem', 'taskList-taskItem__selected']);
+    expect(item.classes()).toEqual(['taskList-taskItem', 'taskList-taskItem__active']);
 
     await wrapper.setProps({
       ...wrapper.props(),

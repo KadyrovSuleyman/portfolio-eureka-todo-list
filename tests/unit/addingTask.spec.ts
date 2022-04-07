@@ -2,7 +2,6 @@ import AddingTask from '@/components/addingTask/addingTask.vue';
 import { mount, VueWrapper } from '@vue/test-utils';
 import { value } from '@/components/addingTask/adapter';
 import addHandler from '@/components/addingTask/handlers';
-import list from '@/state/list';
 
 jest.mock('@/components/addingTask/adapter', () => {
   const { ref } = jest.requireActual('vue');
@@ -15,11 +14,6 @@ jest.mock('@/components/addingTask/adapter', () => {
 jest.mock('@/components/addingTask/handlers', () => ({
   __esModule: true,
   default: jest.fn(),
-}));
-
-jest.mock('@/state/list', () => ({
-  __esModule: true,
-  default: { value: 'mockedValue' },
 }));
 
 beforeEach(() => {
@@ -75,8 +69,6 @@ describe('addingTask.vue', () => {
     await input.trigger('input');
     await button.trigger('click');
     expect(addHandler).toBeCalledTimes(1);
-
     expect(addHandler).toBeCalledWith('first');
-    expect(input.element.value).toBe('first');
   });
 });

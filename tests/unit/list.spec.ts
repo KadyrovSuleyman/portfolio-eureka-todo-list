@@ -1,9 +1,11 @@
-import list, { FILTER } from '@/state/list';
+import list from '@/state/list';
+import { FILTER } from '@/state/filter';
 
 describe('list', () => {
   beforeEach(() => {
     list.clean();
     expect(list.get.value()).toEqual([]);
+    expect(list.isEmpty.value).toBeTruthy();
   });
 
   it('add', () => {
@@ -13,6 +15,7 @@ describe('list', () => {
       text: 'first',
       active: true,
     });
+    expect(list.isEmpty.value).toBeFalsy();
 
     list.add('second');
     expect(list.get.value()[1]).toEqual({
