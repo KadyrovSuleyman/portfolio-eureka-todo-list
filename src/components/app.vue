@@ -20,7 +20,9 @@ taskListInit();
     <TaskList />
     <FilterList />
   </div>
-  <h1 v-else>Загрузка</h1>
+  <div :class="'loadPlaceholder'" v-else>
+    Загрузка
+  </div>
 </template>
 
 <style lang="scss">

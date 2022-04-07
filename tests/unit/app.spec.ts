@@ -1,32 +1,14 @@
 import { mount, VueWrapper } from '@vue/test-utils';
 import App from '@/components/app.vue';
+import { isLoaded } from '@/components/adapter';
 
-const list = [
-  {
-    id: 1,
-    text: 'foo',
-    active: false,
-  },
-  {
-    id: 2,
-    text: 'bar',
-    active: false,
-  },
-  {
-    id: 3,
-    text: 'foo-bar',
-    active: true,
-  },
-];
+jest.mock('@/components/adapter', () => {
+  const { ref } = jest.requireActual('vue');
 
-jest.mock(('@/components/handlers'), () => {
-  const originalModule = jest.requireActual('@/components/handlers');
   return {
     __esModule: true,
-    ...originalModule,
-    toLoadTaskList: () => new Promise((resolve) => {
-      resolve([...list]);
-    }),
+    isLoaded: ref(false),
+    taskListInit: jest.fn(),
   };
 });
 
@@ -36,9 +18,14 @@ describe('app.vue', () => {
     wrapper.unmount();
   });
 
-  it('renders', () => {
+  it('renders', async () => {
     wrapper = mount(App);
     expect(wrapper.exists()).toBeTruthy();
+
+    expect(wrapper.find('.loadPlaceholder').exists()).toBeTruthy();
+
+    isLoaded.value = true;
+    await wrapper.vm.$nextTick();
 
     const app = wrapper.find('.app');
     expect(app.exists()).toBeTruthy();
