@@ -6,3 +6,4 @@ import { computed } from 'vue';
 
 export const list = computed(() => itemList.get.value());
 export const toDeleteTask = itemList.delete;
+export const isListEmpty = computed(() => itemList.get.value().length === 0);

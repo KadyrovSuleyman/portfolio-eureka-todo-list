@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import { computed } from 'vue';
-import { list } from './adapter';
+import { list, isListEmpty } from './adapter';
 import TaskItem from '../taskItem/taskItem.vue';
 import deleteHandler from './handlers';
 
@@ -14,9 +14,12 @@ const deleteTask = computed(() => (id: number) => deleteHandler(id));
   примененными фильтрами - достаточно будет описать шаблон один раз
 
 <template>
-  <div :class="'app-taskList'">
+  <div :class="'app-taskList'" v-if="!isListEmpty">
     <TaskItem v-for="task in list" :key="task.id"
       :name="task.text" :active="task.active" :handle-delete="deleteTask(task.id)"
     />
+  </div>
+  <div :class="'emptyListPlaceholder'" v-else>
+    В списке нет задач
   </div>
 </template>
