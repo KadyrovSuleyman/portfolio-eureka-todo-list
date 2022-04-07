@@ -51,6 +51,8 @@ const List = () => {
         text,
         active: true,
       });
+
+      console.log(list.value);
     },
 
     delete: (targetId: number) => {

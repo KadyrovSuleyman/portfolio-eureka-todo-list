@@ -1,14 +1,14 @@
 import AddingTask from '@/components/addingTask/addingTask.vue';
 import { mount, VueWrapper } from '@vue/test-utils';
-import inputValue from '@/components/addingTask/adapter';
-import toWriteInput from '@/components/addingTask/handlers';
+import { value } from '@/components/addingTask/adapter';
+import addHandler from '@/components/addingTask/handlers';
 import list from '@/state/list';
 
 jest.mock('@/components/addingTask/adapter', () => {
   const { ref } = jest.requireActual('vue');
   return {
     __esModule: true,
-    default: ref('init'),
+    value: ref('init'),
   };
 });
 
@@ -23,11 +23,11 @@ jest.mock('@/state/list', () => ({
 }));
 
 beforeEach(() => {
-  expect(inputValue.value).toBe('init');
+  expect(value.value).toBe('init');
 });
 
 afterEach(() => {
-  inputValue.value = 'init';
+  value.value = 'init';
 });
 
 // написал тесты
@@ -49,20 +49,20 @@ describe('addingTask.vue', () => {
 
   it('binds value', async () => {
     wrapper = mount(AddingTask);
-    expect(inputValue.value).toBe('init');
+    expect(value.value).toBe('init');
 
     expect((wrapper.find('.addingTask-input').element as HTMLInputElement)
       .value).toBe('init');
 
     const input = wrapper.find('input');
 
-    inputValue.value = 'outer change';
+    value.value = 'outer change';
     await wrapper.vm.$nextTick();
     expect(input.element.value).toBe('outer change');
 
     input.element.value = 'inner change';
     await input.trigger('input');
-    expect(inputValue.value).toBe('inner change');
+    expect(value.value).toBe('inner change');
   });
 
   it('button click', async () => {
@@ -74,10 +74,9 @@ describe('addingTask.vue', () => {
     input.element.value = 'first';
     await input.trigger('input');
     await button.trigger('click');
-    expect(toWriteInput).toBeCalledTimes(1);
+    expect(addHandler).toBeCalledTimes(1);
 
-    // expect(toWriteInput).toBeCalledWith(list.value, 'first');
-    expect(toWriteInput).toBeCalledWith(list, 'first');
-    expect(input.element.value).toBe('');
+    expect(addHandler).toBeCalledWith('first');
+    expect(input.element.value).toBe('first');
   });
 });

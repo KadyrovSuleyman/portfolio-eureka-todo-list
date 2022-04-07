@@ -1,7 +1,11 @@
 <script setup lang="ts">
 
-import list from '@/state/list';
+import { computed } from 'vue';
+import { list } from './adapter';
 import TaskItem from '../taskItem/taskItem.vue';
+import deleteHandler from './handlers';
+
+const deleteTask = computed(() => (id: number) => deleteHandler(id));
 
 </script>
 
@@ -11,8 +15,8 @@ import TaskItem from '../taskItem/taskItem.vue';
 
 <template>
   <div :class="'app-taskList'">
-    <TaskItem v-for="task in list.get.value()" :key="task.id"
-      :name="task.text" :selected="task.active"
+    <TaskItem v-for="task in list" :key="task.id"
+      :name="task.text" :active="task.active" :handle-delete="deleteTask(task.id)"
     />
   </div>
 </template>

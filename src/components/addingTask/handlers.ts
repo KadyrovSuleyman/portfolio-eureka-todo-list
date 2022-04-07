@@ -1,12 +1,14 @@
 // -  вынес отдельно хэндлеры событий, триггер которых изменяет
 //    состояние приложения
 
-const toWriteInput = (target: any, input: string) => {
-  if (!target?.add) {
+import { toAddTask, value } from './adapter';
+
+const addHandler = (input: string) => () => {
+  if (input === '') {
     return;
   }
-
-  target.add(input);
+  toAddTask(input);
+  value.value = '';
 };
 
-export default toWriteInput;
+export default addHandler;

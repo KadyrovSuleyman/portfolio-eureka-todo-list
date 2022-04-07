@@ -1,17 +1,14 @@
 <script setup lang="ts">
 
-import list from '@/state/list';
 import { computed } from 'vue';
-import value from './adapter';
-import toWriteInput from './handlers';
+import addHandler from './handlers';
+import { value } from './adapter';
 
 // -  вынес хэндлер отдельной функцией. Результат выполнения функции зависит от списка,
 //    который изменяется независимо - при каждом вызове коллбека он должен пересчитывать
 //    параметры вызова - оборачиваем в computed
-const handleClick = computed(() => () => {
-  toWriteInput(list.value, value.value);
-  value.value = '';
-});
+
+const clickHandler = computed(() => addHandler(value.value));
 
 </script>
 
@@ -23,7 +20,7 @@ const handleClick = computed(() => () => {
 
   <div :class="'app-addingTask'">
     <input v-model="value" :class="'addingTask-input'" />
-    <button @click="handleClick" :class="'addingTask-button'">
+    <button @click="clickHandler" :class="'addingTask-button'">
       Добавить задачу
     </button>
   </div>

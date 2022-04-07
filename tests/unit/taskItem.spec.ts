@@ -20,7 +20,7 @@ describe('taskItem.vue', () => {
   it('watchs props', async () => {
     wrapper = mount(TaskItem, {
       props: {
-        selected: false,
+        active: false,
         name: 'before',
       },
     });
@@ -31,16 +31,16 @@ describe('taskItem.vue', () => {
 
     await wrapper.setProps({
       ...wrapper.props(),
-      selected: true,
+      active: true,
     });
-    expect(wrapper.props().selected).toBeTruthy();
+    expect(wrapper.props().active).toBeTruthy();
     expect(item.classes()).toEqual(['taskList-taskItem', 'taskList-taskItem__selected']);
 
     await wrapper.setProps({
       ...wrapper.props(),
-      selected: false,
+      active: false,
     });
-    expect(wrapper.props().selected).toBeFalsy();
+    expect(wrapper.props().active).toBeFalsy();
     expect(item.classes()).toEqual(['taskList-taskItem']);
 
     expect(item.find('span').text()).toBe('before');

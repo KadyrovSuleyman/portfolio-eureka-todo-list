@@ -6,13 +6,19 @@
 
 import { computed, defineProps } from 'vue';
 
+type HandlerT = (payload: MouseEvent) => void;
 const props = defineProps({
-  selected: Boolean,
+  active: Boolean,
   name: String,
+
+  handleDelete: {
+    type: Function,
+    default: (): HandlerT => () => ({}),
+  },
 });
 
 const taskItemClass = computed(() => 'taskList-taskItem'
-  + `${props.selected ? ' taskList-taskItem__selected' : ''}`);
+  + `${props.active ? ' taskList-taskItem__selected' : ''}`);
 
 </script>
 
@@ -25,7 +31,7 @@ const taskItemClass = computed(() => 'taskList-taskItem'
     <span :class="'taskItem-name'">
       {{ props.name }}
     </span>
-    <div :class="'taskItem-delete'">delete</div>
+    <button :class="'taskItem-delete'" @click="props.handleDelete">delete</button>
   </div>
 
 </template>
