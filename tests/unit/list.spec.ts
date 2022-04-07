@@ -80,6 +80,23 @@ describe('list', () => {
 
   it('toActive toComplete', () => {
     list.add('first');
+    list.toComplete(2);
+    expect(list.get.value()).toEqual([
+      {
+        id: 1,
+        text: 'first',
+        active: true,
+      },
+    ]);
+    list.toActive(2);
+    expect(list.get.value()).toEqual([
+      {
+        id: 1,
+        text: 'first',
+        active: true,
+      },
+    ]);
+
     list.add('second');
     list.add('third');
 
