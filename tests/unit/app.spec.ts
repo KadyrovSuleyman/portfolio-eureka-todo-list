@@ -1,6 +1,6 @@
 import { mount, VueWrapper } from '@vue/test-utils';
 import App from '@/components/app.vue';
-import { isLoaded } from '@/components/adapter';
+import { isLoaded, taskListInit } from '@/components/adapter';
 
 jest.mock('@/components/adapter', () => {
   const { ref } = jest.requireActual('vue');
@@ -23,6 +23,7 @@ describe('app.vue', () => {
     expect(wrapper.exists()).toBeTruthy();
 
     expect(wrapper.find('.loadPlaceholder').exists()).toBeTruthy();
+    expect(taskListInit).toBeCalledTimes(1);
 
     isLoaded.value = true;
     await wrapper.vm.$nextTick();
