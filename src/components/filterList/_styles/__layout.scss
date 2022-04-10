@@ -1,0 +1,11 @@
+.app-filterList {
+  display: grid;
+  grid-auto-flow: row;
+
+  align-items: center;
+  justify-content: start;
+}
+
+.filterList-filterItem {
+  padding-left: 24px;
+}

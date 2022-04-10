@@ -1,0 +1,38 @@
+#app {
+  display: grid;
+  padding: 16px;
+}
+
+.app {
+  display: grid;
+  justify-self: center;
+  align-items: baseline;
+
+  width: 560px;
+  padding: 16px;
+
+  grid-template-rows: auto auto auto;
+  row-gap: 16px;
+}
+
+.app-header {
+  justify-self: center;
+
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+.app-addingTask {
+  grid-column: 1 / 2;
+  grid-row:  2 / 3;
+}
+
+.app-taskList {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.app-filterList {
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+}

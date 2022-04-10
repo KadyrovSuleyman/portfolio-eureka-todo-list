@@ -13,9 +13,16 @@ const setFilter = computed(() => (filter: FILTER) => setFilterHandler(filter));
 
 <template>
   <div :class="'app-filterList'">
+    <span :class="'filterList-header'">
+      Фильтр:
+    </span>
     <FilterItem v-for="filter in filterList" :key="filter"
     :name="filterName.get(filter)" :selected="filter === selectedFilter"
     :onClick="setFilter(filter)"
     />
   </div>
 </template>
+
+<style lang="scss">
+  @use 'styles' as *;
+</style>

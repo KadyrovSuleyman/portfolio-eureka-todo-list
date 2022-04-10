@@ -16,6 +16,9 @@ taskListInit();
 
 <template>
   <div :class="'app'" v-if="isLoaded">
+    <span :class="'app-header'">
+      Список задач
+    </span>
     <AddingTask />
     <TaskList />
     <FilterList />
