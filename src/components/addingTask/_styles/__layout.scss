@@ -1,14 +1,9 @@
 .app-addingTask {
   display: grid;
   grid-auto-flow: column;
-}
-
-.addingTask-input {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
+  grid-template-columns: auto max-content;
 }
 
 .addingTask-button {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
+  justify-self: end;
 }

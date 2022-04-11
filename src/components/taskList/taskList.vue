@@ -23,3 +23,7 @@ const deleteTask = computed(() => (id: number) => deleteHandler(id));
     В списке нет задач
   </div>
 </template>
+
+<style lang="scss">
+  @use 'styles' as *;
+</style>

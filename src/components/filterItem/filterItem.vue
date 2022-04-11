@@ -34,3 +34,7 @@ const filterItemClass = computed(() => 'filterList-filterItem'
   </div>
 
 </template>
+
+<style lang="scss">
+  @use 'styles' as *;
+</style>

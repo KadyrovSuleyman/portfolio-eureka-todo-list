@@ -31,7 +31,11 @@ const taskItemClass = computed(() => 'taskList-taskItem'
     <span :class="'taskItem-name'">
       {{ props.name }}
     </span>
-    <button :class="'taskItem-delete'" @click="props.handleDelete">delete</button>
+    <button :class="'taskItem-delete'" @click="props.handleDelete">удалить</button>
   </div>
 
 </template>
+
+<style lang="scss">
+  @use 'styles' as *;
+</style>

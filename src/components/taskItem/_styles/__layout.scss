@@ -1,0 +1,10 @@
+.taskList-taskItem {
+  display: grid;
+  grid-auto-flow: column;
+
+  justify-content: space-between;
+}
+
+.taskItem-name {
+  overflow: hidden;
+}

@@ -1,0 +1,16 @@
+@use '/src/sass/variables.scss' as *;
+
+.addingTask-button {
+  color: $color-primary;
+  background-color: rgba($color: $color-secondary-1, $alpha: 0.7);
+
+  border-color: $color-primary;
+  outline-color: $color-primary;
+}
+
+.addingTask-input {
+  color: $color-primary;
+
+  border-color: $color-primary;
+  outline-color: $color-primary;
+}

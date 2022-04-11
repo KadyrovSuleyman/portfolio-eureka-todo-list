@@ -1,0 +1,6 @@
+@use '/src/sass/variables.scss' as *;
+
+.taskItem-delete {
+  color: $color-secondary;
+  background-color: rgba($color: #ffffff, $alpha: 0);
+}

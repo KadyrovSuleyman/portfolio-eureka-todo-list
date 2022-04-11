@@ -1,3 +1,7 @@
-@forward 'reset';
 @forward '__layout';
 @forward '__border';
+@forward '__color';
+@forward '__cursor';
+@forward '__font';
+
+@use '/src/sass/reset.scss';

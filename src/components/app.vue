@@ -24,7 +24,7 @@ taskListInit();
     <FilterList />
   </div>
   <div :class="'loadPlaceholder'" v-else>
-    Загрузка
+    Загрузка...
   </div>
 </template>
 

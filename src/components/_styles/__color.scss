@@ -1,0 +1,6 @@
+@use '/src/sass/variables.scss' as *;
+
+.app {
+  color: $color-primary;
+  border-color: rgba($color: $color-primary, $alpha: 0.2)
+}

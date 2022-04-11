@@ -1,0 +1,20 @@
+.addingTask-button {
+  border-width: 1px;
+  border-style: solid;
+
+  border-left: none;
+}
+
+.addingTask-input {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.addingTask-input:focus {
+  border-radius: 0;
+  border-style: solid;
+
+  outline-style: solid;
+  outline-width: 1.5px;
+  outline-offset: -1.5px;
+}
