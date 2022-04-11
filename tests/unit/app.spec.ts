@@ -31,7 +31,7 @@ describe('app.vue', () => {
     const app = wrapper.find('.app');
     expect(app.exists()).toBeTruthy();
     expect(app.find('.app-addingTask').exists()).toBeTruthy();
-    expect(app.find('.app-taskList').exists()).toBeTruthy();
+    expect(app.find('.emptyListPlaceholder').exists()).toBeTruthy();
     expect(app.find('.app-filterList').exists()).toBeTruthy();
   });
 });

@@ -95,8 +95,9 @@ describe('taskList.vue', () => {
     wrapper = mount(TaskList);
     expect(wrapper.exists()).toBeTruthy();
 
-    const addingTask = wrapper.find('.app-taskList');
-    expect(addingTask.exists()).toBeTruthy();
+    expect(wrapper.find('.emptyListPlaceholder').exists()).toBeTruthy();
+    const taskList = wrapper.find('.app-taskList');
+    expect(taskList.exists()).toBeFalsy();
   });
 
   it('watchs list changes', async () => {
@@ -114,6 +115,7 @@ describe('taskList.vue', () => {
     list.toComplete(4);
 
     await wrapper.vm.$nextTick();
+    expect(wrapper.find('.app-taskList').exists).toBeTruthy();
     expect(wrapper.findAll('.taskList-taskItem').length).toBe(4);
 
     expect(wrapper.findAll('.taskList-taskItem')[0].find('span').text()).toBe('first');
