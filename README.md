@@ -1,4 +1,4 @@
-# eureka3
+# eureka
 
 ## Project setup
 ```
