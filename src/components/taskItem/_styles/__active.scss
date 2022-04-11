@@ -1,0 +1,7 @@
+.taskList-taskItem > .taskItem-name {
+  text-decoration: line-through;
+}
+
+.taskList-taskItem__active > .taskItem-name {
+  text-decoration: none;
+}
